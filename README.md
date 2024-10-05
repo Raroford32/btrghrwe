@@ -1,13 +1,6 @@
-# Comprehensive Guide: Running Windows Executables Headlessly on Ubuntu Servers
+# Running zart.EXE Headlessly on Ubuntu Servers
 
-This guide provides step-by-step instructions for setting up a Ubuntu server to run Windows executables headlessly, with a focus on running zart.EXE.
-
-## Table of Contents
-
-1. [Prerequisites](#prerequisites)
-2. [Installation and Execution](#installation-and-execution)
-3. [Troubleshooting](#troubleshooting)
-4. [Best Practices](#best-practices)
+This guide provides instructions for running zart.EXE headlessly on Ubuntu servers using Wine and Xvfb.
 
 ## Prerequisites
 
@@ -50,4 +43,4 @@ If you encounter any issues, please check the following:
 - Regularly update your Ubuntu system
 - Use a dedicated user account for running Windows applications
 
-For any additional support or questions, please refer to the official documentation or contact our support team.
+For any additional support or questions, please refer to the official Wine and Xvfb documentation.
