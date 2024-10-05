@@ -31,6 +31,10 @@ args = "Setup Headless Replit"
 task = "workflow.run"
 args = "Make run_all.sh executable"
 
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Web Application"
+
 [[workflows.workflow]]
 name = "Setup Wine and Xvfb"
 author = "agent"
@@ -97,8 +101,24 @@ agentRequireRestartOnSave = false
 task = "shell.exec"
 args = "chmod +x run_all.sh"
 
+[[workflows.workflow]]
+name = "Web Application"
+author = "agent"
+
+[workflows.workflow.metadata]
+agentRequireRestartOnSave = false
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python app.py"
+waitForPort = 8080
+
 [deployment]
 run = ["sh", "-c", "python run_headless.py"]
 
 [nix]
 channel = "stable-24_05"
+
+[[ports]]
+localPort = 8080
+externalPort = 80
