@@ -19,6 +19,18 @@ args = "Run Headless Simulation"
 task = "workflow.run"
 args = "Run Headless Prototype"
 
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Setup Headless Windows"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Setup Headless Replit"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Make run_all.sh executable"
+
 [[workflows.workflow]]
 name = "Setup Wine and Xvfb"
 author = "agent"
@@ -51,6 +63,39 @@ agentRequireRestartOnSave = false
 [[workflows.workflow.tasks]]
 task = "shell.exec"
 args = "python headless_prototype.py"
+
+[[workflows.workflow]]
+name = "Setup Headless Windows"
+author = "agent"
+
+[workflows.workflow.metadata]
+agentRequireRestartOnSave = false
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "bash setup_headless_windows.sh"
+
+[[workflows.workflow]]
+name = "Setup Headless Replit"
+author = "agent"
+
+[workflows.workflow.metadata]
+agentRequireRestartOnSave = false
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "bash setup_headless_replit.sh"
+
+[[workflows.workflow]]
+name = "Make run_all.sh executable"
+author = "agent"
+
+[workflows.workflow.metadata]
+agentRequireRestartOnSave = false
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "chmod +x run_all.sh"
 
 [deployment]
 run = ["sh", "-c", "python run_headless.py"]
